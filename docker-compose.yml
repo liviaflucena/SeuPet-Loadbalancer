@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  loadbalancer:
+    image: nginx:latest
+    container_name: nginx-loadbalancer
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - node1
+      - node2
+      - node3
+      - node4
+      - node5
+
+  node1:
+    image: nginx:latest
+    container_name: node1
+    volumes:
+      - ./build:/usr/share/nginx/html
+      - ./default.conf:/etc/nginx/conf.d/default.conf
+
+  node2:
+    image: nginx:latest
+    container_name: node2
+    volumes:
+      - ./build:/usr/share/nginx/html
+      - ./default.conf:/etc/nginx/conf.d/default.conf
+
+  node3:
+    image: nginx:latest
+    container_name: node3
+    volumes:
+      - ./build:/usr/share/nginx/html
+      - ./default.conf:/etc/nginx/conf.d/default.conf
+
+  node4:
+    image: nginx:latest
+    container_name: node4
+    volumes:
+      - ./build:/usr/share/nginx/html
+      - ./default.conf:/etc/nginx/conf.d/default.conf
+
+  node5:
+    image: nginx:latest
+    container_name: node5
+    volumes:
+      - ./build:/usr/share/nginx/html
+      - ./default.conf:/etc/nginx/conf.d/default.conf
