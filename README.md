@@ -1,4 +1,4 @@
-# 🌐 Projeto AplicacaoPWeb2 - Load Balancer com NGINX e Docker Compose
+# 🌐 Projeto SeuPet - Load Balancer com NGINX e Docker Compose
 
 Este projeto implementa um Load Balancer com NGINX, balanceando 5 nós de uma aplicação ReactJS utilizando o algoritmo de Round Robin. Toda a orquestração dos containers é realizada via Docker Compose.
 
@@ -18,7 +18,7 @@ Este projeto implementa um Load Balancer com NGINX, balanceando 5 nós de uma ap
 
 ### 1️⃣ Gere o build da sua aplicação React
 
-Dentro do seu projeto React (\`~/SeuPet-1\`):
+Dentro do seu projeto React (\`~/SeuPet\`):
 
 \`\`\`bash
 npm install
@@ -30,7 +30,7 @@ mv dist build
 
 \`\`\`bash
 cd ~/SeuPet-Loadbalancer
-cp -R ~/SeuPet-1/build .
+cp -R ~/SeuPet/build .
 \`\`\`
 
 ### 3️⃣ Execute o projeto com Docker Compose
